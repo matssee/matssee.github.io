@@ -2,10 +2,19 @@
 <html>
 <head>
   <link rel="stylesheet" href="style.css">
+
+  <script>
+    function updatePicture() {
+      document.getElementById("the_picture").src = "images/Matcher Hall 2.png" + Math.floor(Math.random() * 1000000);
+      console.log("Changed image src.");
+    }
+
+    setInterval(updatePicture, 10000);
+</script>
 </head>
 <body>
 
-  <img src="images/Matcher Hall 2.png" alt="">
+  <img id="the_picture" src="images/Matcher Hall 2.png" alt="">
   
 </body>
 </html>
