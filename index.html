@@ -4,9 +4,15 @@
   <link rel="stylesheet" href="style.css">
 
   <script>
+    let picture_count = 2
+    let active_picture = 0
+    let pictures = ["images/Matcher Hall 2.png", "images/Matcher Hall 3.png"]
+
     function updatePicture() {
-      document.getElementById("the_picture").src = "images/Matcher Hall 2.png?id=" + Math.floor(Math.random() * 100000000);
-      console.log("Changed image src.");
+      let image_source = pictures[active_picture] + "?id=" + Math.floor(Math.random() * 100000000);
+      document.getElementById("the_picture").src = image_source;
+      active_picture = (active_picture + 1) % picture_count;
+      console.log("Changed image src: " + image_source);
     }
 
     setInterval(updatePicture, 10000);
